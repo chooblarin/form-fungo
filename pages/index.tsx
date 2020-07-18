@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { SignInForm } from "../components/sign-in/SignInForm";
+import Link from "next/link";
 
 export const Home = (): JSX.Element => {
   return (
@@ -10,7 +10,14 @@ export const Home = (): JSX.Element => {
       </Head>
 
       <main>
-        <SignInForm />
+        <ul>
+          <li>
+            <Link href="/sign-in">Sign-in form example</Link>
+          </li>
+          <li>Credit card example</li>
+          <li>Auto fill example</li>
+          <li>Inclusive gender example</li>
+        </ul>
       </main>
 
       <footer></footer>
@@ -28,7 +35,6 @@ export const Home = (): JSX.Element => {
         main {
           padding: 5rem 0;
           flex: 1;
-          width: 100%;
         }
 
         footer {
@@ -38,24 +44,6 @@ export const Home = (): JSX.Element => {
           display: flex;
           justify-content: center;
           align-items: center;
-        }
-      `}</style>
-
-      <style jsx global>{`
-        :root {
-          --desktop-font-size: 16px;
-          --mobile-font-size: 22px;
-        }
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-        * {
-          box-sizing: border-box;
         }
       `}</style>
     </div>
