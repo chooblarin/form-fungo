@@ -28,10 +28,7 @@ export const Home = (): JSX.Element => {
         main {
           padding: 5rem 0;
           flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
+          width: 100%;
         }
 
         footer {

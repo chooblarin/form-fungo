@@ -43,6 +43,7 @@ export const SignInForm: React.FC = () => {
       <style jsx>{`
         form {
           margin: 0 auto;
+          width: 100%;
           max-width: 500px;
         }
         h1 {
@@ -57,8 +58,7 @@ export const SignInForm: React.FC = () => {
           font-size: 22px; /* fallback */
           font-size: var(--mobile-font-size);
           padding: 15px;
-          width: 90%; /* fallback */
-          width: calc(100% - 30px); /* full width minus padding */
+          width: 100%;
         }
         input[type="email"]:not(:focus):invalid,
         input[type="password"]:not(:focus):invalid {
@@ -75,6 +75,26 @@ export const SignInForm: React.FC = () => {
         form section {
           margin: 0 0 20px 0;
           position: relative; /* for password toggle positioning */
+        }
+        button {
+          background-color: #eee;
+          border: 1px solid #ccc;
+          border-radius: 2px;
+          color: #444;
+          cursor: pointer;
+          display: block;
+          font-size: 22px; /* fallback */
+          font-size: var(--mobile-font-size);
+          font-weight: 500;
+          margin: 3px 0 0 0;
+          padding: 10px;
+        }
+        button:hover {
+          background-color: #ccc;
+          color: black;
+        }
+        button#sign-in {
+          margin: 0px 0 0 0;
         }
         @media (min-width: 450px) {
           input {
