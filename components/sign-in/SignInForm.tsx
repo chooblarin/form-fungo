@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import { TogglePasswordButton } from "./TogglePasswordButton";
+
+type PasswordInputType = "password" | "text";
 
 export const SignInForm: React.FC = () => {
+  const [passwordInputType, setPasswordInputType] = useState<PasswordInputType>(
+    "password"
+  );
   return (
     <form action="#">
       <h1 className="title">Form fungo</h1>
@@ -14,13 +20,28 @@ export const SignInForm: React.FC = () => {
           required={true}
         />
       </section>
+
       <section>
         <label htmlFor="current-password">Password</label>
+        <TogglePasswordButton
+          passwordInputType={passwordInputType}
+          onClick={() => {
+            switch (passwordInputType) {
+              case "password":
+                setPasswordInputType("text");
+                break;
+              case "text":
+                setPasswordInputType("password");
+                break;
+            }
+          }}
+        />
         <input
-          id="password"
-          name="password"
-          type="password"
-          autoComplete="new-password"
+          id="current-password"
+          name="current-password"
+          type={passwordInputType}
+          autoComplete="current-password"
+          minLength={8}
           required={true}
         />
       </section>
