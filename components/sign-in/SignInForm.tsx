@@ -12,13 +12,7 @@ export const SignInForm: React.FC = () => {
       <h1 className="title">Form fungo</h1>
       <section>
         <label htmlFor="email">Email</label>
-        <input
-          id="email"
-          type="email"
-          placeholder="bachikoi@chooblarin.com"
-          autoComplete="email"
-          required={true}
-        />
+        <input id="email" type="email" autoComplete="email" required={true} />
       </section>
 
       <section>

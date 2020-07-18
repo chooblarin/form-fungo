@@ -14,6 +14,7 @@ export const TogglePasswordButton: React.FC<TogglePasswordButtonProps> = ({
   return (
     <button
       id="toggle-password"
+      // Set type as "button" because the default type for a button in a form is "submit".
       type="button"
       aria-label={
         passwordInputType === "password"
