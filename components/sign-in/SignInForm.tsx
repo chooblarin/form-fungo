@@ -1,17 +1,26 @@
 import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import { TogglePasswordButton } from "./TogglePasswordButton";
 
 type PasswordInputType = "password" | "text";
 
 export const SignInForm: React.FC = () => {
+  const { register, handleSubmit, errors } = useForm();
   const [passwordInputType, setPasswordInputType] = useState<PasswordInputType>(
     "password"
   );
   return (
-    <form action="#">
+    <form onSubmit={handleSubmit(() => alert("hello"))}>
       <section>
         <label htmlFor="email">Email</label>
-        <input id="email" type="email" autoComplete="email" required={true} />
+        <input
+          id="email"
+          type="email"
+          name="email"
+          autoComplete="email"
+          ref={register({ required: "Email can't be blank" })}
+        />
+        {errors.email && <p className="error">{errors.email.message}</p>}
       </section>
 
       <section>
@@ -31,15 +40,17 @@ export const SignInForm: React.FC = () => {
         />
         <input
           id="current-password"
-          name="current-password"
+          name="currentPassword"
           type={passwordInputType}
-          autoComplete="current-password"
+          autoComplete="currentPassword"
           autoCapitalize="none"
           autoCorrect="off"
           spellCheck="false"
-          minLength={8}
-          required={true}
+          ref={register({ required: "Password can't be blank" })}
         />
+        {errors.currentPassword && (
+          <p className="error">{errors.currentPassword.message}</p>
+        )}
       </section>
       <button type="submit">Sign in</button>
       <style jsx>{`
@@ -66,6 +77,9 @@ export const SignInForm: React.FC = () => {
         input[type="password"]:not(:focus):invalid {
           color: red;
           outline-color: red;
+        }
+        .error {
+          color: #ab2c22;
         }
         label {
           display: block;
