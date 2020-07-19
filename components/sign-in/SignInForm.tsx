@@ -9,7 +9,6 @@ export const SignInForm: React.FC = () => {
   );
   return (
     <form action="#">
-      <h1 className="title">Form fungo</h1>
       <section>
         <label htmlFor="email">Email</label>
         <input id="email" type="email" autoComplete="email" required={true} />
@@ -35,6 +34,9 @@ export const SignInForm: React.FC = () => {
           name="current-password"
           type={passwordInputType}
           autoComplete="current-password"
+          autoCapitalize="none"
+          autoCorrect="off"
+          spellCheck="false"
           minLength={8}
           required={true}
         />
@@ -42,9 +44,9 @@ export const SignInForm: React.FC = () => {
       <button type="submit">Sign in</button>
       <style jsx>{`
         form {
-          margin: 0 auto;
           width: 100%;
           max-width: 500px;
+          margin: 0 auto;
         }
         h1 {
           border-bottom: 1px solid #ccc;

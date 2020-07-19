@@ -10,10 +10,23 @@ const SignIn = (): JSX.Element => {
       </Head>
 
       <main>
+        <h1 className="title">Sign in</h1>
+        <a href="#" className="password-reset">
+          Forgot your password?
+        </a>
         <SignInForm />
       </main>
 
       <footer></footer>
+      <style jsx>{`
+        main {
+          padding: 16px;
+        }
+        .password-reset {
+          display: inline-block;
+          margin: 12px 0;
+        }
+      `}</style>
     </div>
   );
 };
