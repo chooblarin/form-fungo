@@ -12,9 +12,15 @@ export const Home = (): JSX.Element => {
       <main>
         <ul>
           <li>
-            <Link href="/sign-in">Sign-in form example</Link>
+            <Link href="/sign-in">
+              <a>Sign-in form example</a>
+            </Link>
           </li>
-          <li>Credit card example</li>
+          <li>
+            <Link href="/credit-card">
+              <a>Credit card example</a>
+            </Link>
+          </li>
           <li>Auto fill example</li>
           <li>Inclusive gender example</li>
         </ul>

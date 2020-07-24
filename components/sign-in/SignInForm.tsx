@@ -10,7 +10,7 @@ export const SignInForm: React.FC = () => {
     "password"
   );
   return (
-    <form onSubmit={handleSubmit(() => alert("hello"))}>
+    <form onSubmit={handleSubmit(() => alert("signed in"))}>
       <section>
         <label htmlFor="email">Email</label>
         <input
